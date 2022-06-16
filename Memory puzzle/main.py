@@ -166,7 +166,7 @@ def get_box_at_pixel(x, y):
             box_rect = pygame.Rect(left, top, box_size, box_size)
             if box_rect.collidepoint(x, y):
                 return box_x, box_y
-        return None, None
+    return None, None
 
 
 def draw_icon(shape, color, box_x, box_y):
