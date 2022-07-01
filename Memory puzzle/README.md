@@ -28,4 +28,4 @@ in your terminal
 
 
 ## Output
-https://github.com/S13G/PyProjects/tree/main/Memory puzzle/assets/Screenshot.png
+https://github.com/S13G/PyProjects/tree/main/Memory%20puzzle/assets/Screenshot.png
