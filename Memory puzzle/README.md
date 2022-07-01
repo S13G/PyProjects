@@ -28,4 +28,4 @@ in your terminal
 
 
 ## Output
-![Game](https://imgur.com/a/2K0NGQv)
+https://github.com/S13G/PyProjects/tree/main/Memory puzzle/assets/Screenshot.png
