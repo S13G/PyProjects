@@ -154,7 +154,7 @@ def show_start_screen():
         pygame.display.update()
         fps_clock.tick(fps)
         degrees1 += 3
-        degrees2 += 7
+        degrees2 += 4
 
 
 def terminate():
@@ -167,13 +167,13 @@ def get_random_location():
 
 
 def show_game_over_screen():
-    game_over_font = pygame.font.Font('Ubuntu Mono derivative Powerline.ttf', 150)
+    game_over_font = pygame.font.Font('Ubuntu Mono derivative Powerline.ttf', 100)
     game_surface = game_over_font.render('Game', True, white)
     over_surface = game_over_font.render('Over', True, white)
     game_rect = game_surface.get_rect()
     over_rect = over_surface.get_rect()
-    game_rect.midtop = (window_width // 2, 10)
-    over_rect.midtop = (window_width // 2, game_rect.height + 10 + 25)
+    game_rect.midtop = (window_width // 2, 80)
+    over_rect.midtop = (window_width // 2, game_rect.height + 10 + 55)
 
     display_surface.blit(game_surface, game_rect)
     display_surface.blit(over_surface, over_rect)
