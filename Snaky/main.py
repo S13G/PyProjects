@@ -7,7 +7,7 @@ from pygame.locals import *
 cell_size = 20
 fps = 15
 window_height = 480
-window_width = 640
+window_width: int = 640
 
 assert window_height % cell_size == 0, "Window height must be a multiple of cell size."
 assert window_width % cell_size == 0, "Window width must be a multiple of cell size."
@@ -84,7 +84,7 @@ def run_game():
                 return
 
         if snaky_coordinates[head]['x'] == fruit['x'] and snaky_coordinates[head]['y'] == fruit['y']:
-            apple = get_random_location()
+            fruit = get_random_location()
         else:
             del snaky_coordinates[-1]
 
@@ -203,3 +203,24 @@ def draw_snake(snaky_coordinates):
 
         snake_segment_rect = pygame.Rect(x, y, cell_size, cell_size)
         pygame.draw.rect(display_surface, dark_green, snake_segment_rect)
+        snake_inner_segment_rect = pygame.Rect(x + 4, y + 4, cell_size - 8, cell_size - 8)
+        pygame.draw.rect(display_surface, green, snake_inner_segment_rect)
+
+
+def draw_fruit(coordinates):
+    x = coordinates['x'] * cell_size
+    y = coordinates['y'] * cell_size
+
+    fruit_rect = pygame.Rect(x, y, cell_size, cell_size)
+    pygame.draw.rect(display_surface, red, fruit_rect)
+
+
+def draw_grid():
+    for x in range(0, window_width, cell_size):  # draw vertical lines
+        pygame.draw.line(display_surface, dark_gray, (x, 0), (x, window_height))
+    for y in range(0, window_height, cell_size):
+        pygame.draw.line(display_surface, dark_gray, (0, y), (window_width, y))
+
+
+if __name__ == '__main__':
+    main()
