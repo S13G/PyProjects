@@ -1,7 +1,7 @@
 ## SNAKY
 Snaky is a legendary snake trapped in an enclosed dungeon and he is doomed to eat all the globs for all eternity as 
 punishment for attacking the green goblins....
-Snaky starts out as a short worm moving around the screen. He can't stop or slow down, but can be control which 
+Snaky starts out as a short worm moving around the screen. He can't stop or slow down, but can control which 
 direction he wants to go. Green globs appear randomly on the screen, so snaky has to move to eat the green glob. 
 Each time snaky eats a green glob, he grows longer and longer. Snaky dies if he eats himself(aka commit suicide) or 
 crashes into the walls of the ancient dungeon.
