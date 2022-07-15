@@ -37,7 +37,7 @@ def main():
 
     pygame.init()
     basic_font = pygame.font.Font('Ubuntu Mono derivative Powerline.ttf', 16)
-    display_surface = pygame.display.set_mode(window_width, window_height)
+    display_surface = pygame.display.set_mode((window_width, window_height))
     fps_clock = pygame.time.Clock()
     pygame.display.set_caption('Snaky')
 
@@ -108,7 +108,7 @@ def run_game():
 
 
 def message_key():
-    key_surface = basic_font.render('Press a key to play.', True, dark_gray)
+    key_surface = basic_font.render('Press any key to play.', True, white)
     key_rect = key_surface.get_rect()
     key_rect.topleft = (window_width - 200, window_height - 200)
     display_surface.blit(key_surface, key_rect)
@@ -135,15 +135,15 @@ def show_start_screen():
     degrees2 = 0
 
     while True:
-        display_surface(background_color)
+        display_surface.fill(background_color)
         first_rotated_surface = pygame.transform.rotate(first_title_surface, degrees1)
         first_rotated_rect = first_rotated_surface.get_rect()
-        first_rotated_rect.center = (window_width / 2, window_height / 2)
+        first_rotated_rect.center = (window_width // 2, window_height // 2)
         display_surface.blit(first_rotated_surface, first_rotated_rect)
 
         second_rotated_surface = pygame.transform.rotate(second_title_surface, degrees2)
         second_rotated_rect = second_rotated_surface.get_rect()
-        second_rotated_rect.center = (window_width / 2, window_height / 2)
+        second_rotated_rect.center = (window_width // 2, window_height // 2)
         display_surface.blit(second_rotated_surface, second_rotated_rect)
 
         message_key()
@@ -172,8 +172,8 @@ def show_game_over_screen():
     over_surface = game_over_font.render('Over', True, white)
     game_rect = game_surface.get_rect()
     over_rect = over_surface.get_rect()
-    game_rect.midtop = (window_width / 2, 10)
-    over_rect.midtop = (window_width / 2, game_rect.height + 10 + 25)
+    game_rect.midtop = (window_width // 2, 10)
+    over_rect.midtop = (window_width // 2, game_rect.height + 10 + 25)
 
     display_surface.blit(game_surface, game_rect)
     display_surface.blit(over_surface, over_rect)
@@ -202,9 +202,9 @@ def draw_snake(snaky_coordinates):
         y = coordinate['y'] * cell_size
 
         snake_segment_rect = pygame.Rect(x, y, cell_size, cell_size)
-        pygame.draw.rect(display_surface, dark_green, snake_segment_rect)
-        snake_inner_segment_rect = pygame.Rect(x + 4, y + 4, cell_size - 8, cell_size - 8)
-        pygame.draw.rect(display_surface, green, snake_inner_segment_rect)
+        pygame.draw.rect(display_surface, dark_gray, snake_segment_rect)
+        snake_inner_segment_rect = pygame.Rect(x + 4, y + 4, cell_size - 6, cell_size - 6)
+        pygame.draw.rect(display_surface, red, snake_inner_segment_rect)
 
 
 def draw_fruit(coordinates):
@@ -212,7 +212,7 @@ def draw_fruit(coordinates):
     y = coordinates['y'] * cell_size
 
     fruit_rect = pygame.Rect(x, y, cell_size, cell_size)
-    pygame.draw.rect(display_surface, red, fruit_rect)
+    pygame.draw.rect(display_surface, green, fruit_rect)
 
 
 def draw_grid():
