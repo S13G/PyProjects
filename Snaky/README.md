@@ -21,3 +21,4 @@ Simply run
 in your terminal
 
 ### Output
+https://github.com/S13G/PyProjects/blob/main/Snaky/assets/Screenshot%20from%202022-07-15%2012-58-22.jpg
