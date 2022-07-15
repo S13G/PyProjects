@@ -8,7 +8,7 @@ crashes into the walls of the ancient dungeon.
 
 
 ### Library used
-The Python library used for the creation of Puzzmic is Pygame
+The Python library used for the creation of Snaky is Pygame
 If you don't have it installed, simple run
 
 `pip install pygame`
